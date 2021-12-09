@@ -1,0 +1,65 @@
+name: tandem
+description: tandem app
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  device_preview: 0.8.0
+  flutter_svg: 0.23.0
+  sizer: 2.0.13
+  syncfusion_flutter_sliders: 19.3.54
+  flutter_staggered_grid_view: 0.4.1
+  preload_page_view: 0.1.6
+
+  cupertino_icons: 1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 1.0.0
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/inter/
+    - assets/images/
+#    - assets/lang/
+    - assets/vector/
+    - assets/images/test_users/1/
+    - assets/images/test_users/2/
+    - assets/images/test_users/3/
+    - assets/images/test_users/4/
+    - assets/images/test_users/5/
+    - assets/images/test_users/6/
+    - assets/images/test_users/7/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter/Inter-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/inter/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/inter/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/inter/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/inter/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/inter/Inter-Black.ttf
+          weight: 900

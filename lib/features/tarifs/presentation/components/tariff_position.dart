@@ -3,31 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:tandem/core/utils/colors_config/app_colors_config.dart';
 
 class TariffPosition extends StatefulWidget {
-  final double width;
-  final double height;
+  final int type;
 
-  final int currentIndex;
-
-  const TariffPosition(
-      {Key? key,
-      required this.width,
-      required this.height,
-      required this.currentIndex,
-      r})
-      : super(key: key);
-
-  set gradientType(int gradientType) {}
+  const TariffPosition({
+    Key? key,
+    required this.type,
+  }) : super(key: key);
 
   @override
-  _TariffPositionState createState() =>
-      _TariffPositionState(this.gradientType = 0);
+  _TariffPositionState createState() => _TariffPositionState();
 }
 
 class _TariffPositionState extends State<TariffPosition> {
-  final int gradientType;
-
-  _TariffPositionState(this.gradientType);
-
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -36,24 +23,24 @@ class _TariffPositionState extends State<TariffPosition> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: widget.width,
-              height: widget.height,
+              width: 56,
+              height: 11,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: appColors.gray4,
               ),
             ),
             Container(
-              width: widget.width,
-              height: widget.height,
+              width: 56,
+              height: 11,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: appColors.gray4,
               ),
             ),
             Container(
-              width: widget.width,
-              height: widget.height,
+              width: 56,
+              height: 11,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: appColors.gray4,
@@ -64,27 +51,25 @@ class _TariffPositionState extends State<TariffPosition> {
       ),
       AnimatedAlign(
         duration: const Duration(milliseconds: 150),
-        alignment: gradientType == 0
+        alignment: widget.type == 1
             ? Alignment.centerLeft
-            : gradientType == 1
+            : widget.type == 2
                 ? Alignment.center
                 : Alignment.centerRight,
         child: Container(
-          width: widget.width,
-          height: 7,
+          width: 56,
+          height: 11,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: appColors.gray4,
             gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                colors: gradientType == 0
-                    ? [appColors.tertiary, appColors.primary]
-                    : gradientType == 1
-                        ? [appColors.pink, appColors.orange]
-                        : gradientType == 2
-                            ? [appColors.green, appColors.blue1]
-                            : [appColors.blue2, appColors.pink]),
+                colors: widget.type == 1
+                    ? [appColors.pink, appColors.orange]
+                    : widget.type == 2
+                        ? [appColors.green, appColors.blue1]
+                        : [appColors.blue2, appColors.pink]),
           ),
         ),
       ),

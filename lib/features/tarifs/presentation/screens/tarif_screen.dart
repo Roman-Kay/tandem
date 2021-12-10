@@ -4,6 +4,7 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:tandem/core/utils/colors_config/app_colors_config.dart';
 import 'package:tandem/core/utils/typography/app_text_styles.dart';
 import 'package:tandem/features/home/presentation/models/interest_button_ui_model.dart';
+import 'package:tandem/features/tarifs/presentation/components/custom_tab_page_selector.dart';
 // import 'package:tandem/features/tarifs/presentation/components/custom_tab_page_selector.dart';
 import 'package:tandem/features/tarifs/presentation/components/tariff_card.dart';
 import 'package:tandem/features/tarifs/presentation/components/tariff_description.dart';
@@ -86,6 +87,7 @@ class _TariffScreenState extends State<TariffScreen>
 
   Widget _animatedWidgetText = TariffName(type: 1);
 
+  Widget _animatedWidgetPosition = TariffPosition(type: 1);
   // Widget _animatedWidgetPosition = TariffPosition(type: 1);
 
   // String _getText(int type) {
@@ -124,6 +126,8 @@ class _TariffScreenState extends State<TariffScreen>
                           // print(page);
                           _animatedWidget = TariffDescription(type: page + 1);
                           _animatedWidgetText = TariffName(type: page + 1);
+                          _animatedWidgetPosition =
+                              TariffPosition(type: page + 1);
                           //  _animatedWidgetPosition = TariffPosition(type: 1);
                         });
                       },
@@ -147,19 +151,14 @@ class _TariffScreenState extends State<TariffScreen>
                       ],
                     ),
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 139.0, right: 139.0),
-                  //   child: TariffPosition(
-                  //     width: (width - 290) / 3,
-                  //     height: 7,
-                  //     currentIndex: currentIndex,
-                  //     colorStart: stepsGradientStart,
-                  //     colorEnd: stepsGradientEnd,
-                  //   ),
-                  // ),
-// TariffPosition(
-
-// ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 95.0, right: 95.0, bottom: 12),
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 250),
+                      child: _animatedWidgetPosition,
+                    ),
+                  ),
                   // Padding(
                   //   padding: const EdgeInsets.only(top: 1, bottom: 12),
                   //   child: CustomPageSelectorForTariff(
